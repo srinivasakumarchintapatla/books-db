@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Book Details</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    
+    <div class="book-details">
+        <h2>Book Information</h2>
+        <p><strong>Title:</strong> {{ title }}</p>
+        <p><strong>Author:</strong> {{ author }}</p>
+        <p><strong>Rating:</strong> {{ rating }}/5</p>
+        <p><strong>Bestseller:</strong> 
+            {% if is_bestseller %}
+                Yes ⭐
+            {% else %}
+                No
+            {% endif %}
+        </p>
+    </div>
+    
+    <a href="{% url 'book_outlet:index' %}">← Back to Books</a>
+</body>
+</html>

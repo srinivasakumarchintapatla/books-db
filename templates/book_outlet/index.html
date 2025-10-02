@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+</head>
+<body>
+    <h1>Welcome to Book Store</h1>
+    
+    <div class="books-list">
+        {% for book in books %}
+            <div class="book-item">
+                <h3>
+                    <a href="{% url 'book_outlet:book_detail' book.pk %}">
+                        {{ book.title }}
+                    </a>
+                </h3>
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Rating:</strong> {{ book.rating }}/5</p>
+                {% if book.is_bestselling %}
+                    <p><span style="color: gold;">⭐ Bestseller</span></p>
+                {% endif %}
+            </div>
+            <hr>
+        {% empty %}
+            <p>No books available at the moment.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
