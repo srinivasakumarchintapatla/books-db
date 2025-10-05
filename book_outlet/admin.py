@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Author
+from .models import Book, Author,Address,country 
 
 # Register your models here.
 
@@ -11,3 +11,5 @@ class BookAdmin(admin.ModelAdmin):
 
 admin.site.register(Book, BookAdmin)  # Register the Book model with custom admin
 admin.site.register(Author)  # Register the Author model
+admin.site.register(Address)  # Register the Address model
+admin.site.register(country)  # Register the country model
