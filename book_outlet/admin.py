@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book
+from .models import Book, Author
 
 # Register your models here.
 
@@ -9,4 +9,5 @@ class BookAdmin(admin.ModelAdmin):
     list_filter = ("author","rating",)
     list_display = ("title","author","rating","is_bestselling")
 
-admin.site.register(Book,BookAdmin) # Register the Book model to make it accessible in the admin interface.. )
+admin.site.register(Book, BookAdmin)  # Register the Book model with custom admin
+admin.site.register(Author)  # Register the Author model
